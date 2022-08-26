@@ -91,7 +91,7 @@ long B(long n, long k){
 
 long C(long n){
      
-     after_3rd_term  += D(n);
+     after_3rd_term += D(n);
      return after_3rd_term; 
 }
 
