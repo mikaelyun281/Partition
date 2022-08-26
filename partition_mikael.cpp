@@ -14,7 +14,7 @@ long D(long n);
 
 int main(void) {
 
-  auto N = 150.7;  // Please input a natural number "N" for P(N) at here.
+  auto N = 150;  // Please input a natural number "N" for P(N) at here.
    
    
       long n = N-6, k, partition;  
