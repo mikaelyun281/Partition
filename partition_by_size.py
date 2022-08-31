@@ -4,7 +4,7 @@ timer_start = timeit.default_timer()
 
 (n,k) = (100,50)  
 # Please input (n,k) for the ps(n,k) function above here.
-# Note that when k=n, then ps(n,k) = P(n), 
+# Note that when k>=n, then ps(n,k) = P(n), 
 # where P(n) is the partition function.
 
 
