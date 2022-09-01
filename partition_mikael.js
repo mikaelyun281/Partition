@@ -2,7 +2,7 @@
 let N = 150  // Please input a natural number "N" for P(N) at here.
 
 
-let startTime = performance.now()
+let startTime = performance.now();
 
 if (N >= 0 && N - parseInt(N) == 0) {
 
@@ -79,5 +79,5 @@ if (N >= 0 && N - parseInt(N) == 0) {
 }
 
 else {
-    console.log("undefined")
+    console.log("undefined");
 }
