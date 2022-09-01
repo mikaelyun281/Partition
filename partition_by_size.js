@@ -7,7 +7,7 @@ where P(n) is the partition function.
 */
 
 
-let startTime = performance.now()
+let startTime = performance.now();
 
 
 if (n - parseInt(n) == 0 && k - parseInt(k) == 0 && n >= 0 && k >= 0) {
