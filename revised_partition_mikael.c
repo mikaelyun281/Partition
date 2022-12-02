@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 long first2terms(long N);
-long after_3rd_term = 0;
+long from_3rd_term = 0;
 long expansion(long n, long k);
 
 
@@ -24,7 +24,7 @@ int main(void) {
             expansion(n,k);
          }
            
-         partition = first2terms(N) + after_3rd_term;
+         partition = first2terms(N) + from_3rd_term;
          printf("%ld\n",partition);
      
          end = clock();
@@ -63,10 +63,10 @@ long expansion(long n, long k){
      else{}
     
      if(n%2==1){
-         after_3rd_term += ((n+1)/2)*((n+1)/2)+((n+1)/2);
+         from_3rd_term += ((n+1)/2)*((n+1)/2)+((n+1)/2);
      }
      else{
-         after_3rd_term += (n/2+1)*(n/2+1);
+         from_3rd_term += (n/2+1)*(n/2+1);
      }
-     return after_3rd_term;     
+     return from_3rd_term;     
 }
