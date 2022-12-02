@@ -1,10 +1,7 @@
 #include <iostream>
 #include <chrono>
-
-auto start = std::chrono::steady_clock::now();
-
 long first2terms(long N);
-long after_3rd_term = 0;
+long from_3rd_term = 0;
 long A(long n, long k);
 long B(long n, long k);
 long C(long n);
@@ -16,7 +13,7 @@ int main(void) {
 
   auto N = 150;  // Please input a natural number "N" for P(N) at here.
    
-   
+      auto start = std::chrono::steady_clock::now();
       long n = N-6, k, partition;  
       
       if(N>=0 && N-(int)N == 0){
@@ -26,7 +23,7 @@ int main(void) {
             A(n,k);
          }
           
-         partition = first2terms(N) + after_3rd_term;
+         partition = first2terms(N) + from_3rd_term;
          std::cout << partition << '\n';
       
          auto end = std::chrono::steady_clock::now();
@@ -91,8 +88,8 @@ long B(long n, long k){
 
 long C(long n){
 
-     after_3rd_term  += D(n);
-     return after_3rd_term;  
+     from_3rd_term  += D(n);
+     return from_3rd_term;  
 }
 
 
@@ -103,10 +100,8 @@ long D(long n){
      if(n%2==1){
         result += ((n+1)/2)*((n+1)/2)+((n+1)/2);
      }
-      
      else{
         result += (n/2+1)*(n/2+1);
      }
-
      return result;
 } 
