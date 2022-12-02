@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 
 namespace Partition
@@ -12,7 +12,7 @@ namespace Partition
             if (N >= 0)
             {
                 var watch = System.Diagnostics.Stopwatch.StartNew();
-                long partition = I.first2terms(N) + II.after_3rd_term(N);
+                long partition = I.first2terms(N) + II.from_3rd_term(N);
 
                 watch.Stop();
                 var elapsedMs = (watch.ElapsedMilliseconds) / 1000;
@@ -49,7 +49,7 @@ namespace Partition
 
     class II
     {
-        internal static long after_3rd_term(long N)
+        internal static long from_3rd_term(long N)
         {
             long result = 0;
             for (long n = N - 6; n >= 0; n -= 2)
