@@ -17,12 +17,11 @@ if (N >= 0 && N - parseInt(N) == 0) {
             } else {
                 secondterm = (N / 2 - 1) * (N / 2 - 1);
             }
-
             return N + secondterm;
         }
     }
 
-    function after_3rd_term(N) {
+    function from_3rd_term(N) {
         let n = N - 6;
         let result = 0;
         for (n; n >= 0; n -= 2) {
@@ -70,7 +69,7 @@ if (N >= 0 && N - parseInt(N) == 0) {
         return result;
     }
 
-    let partition = first2terms(N) + after_3rd_term(N);
+    let partition = first2terms(N) + from_3rd_term(N);
     console.log(partition);
 
     let endTime = performance.now();
