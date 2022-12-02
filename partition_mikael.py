@@ -16,7 +16,7 @@ try:
                 secondterm = (N/2-1)*(N/2-1)
             return N + secondterm
 
-    def after_3rd_term(N):
+    def from_3rd_term(N):
         n = N-6
         result = 0
         for n in range(n, -1, -2):
@@ -51,7 +51,7 @@ try:
         else:
             return (n/2+1)*(n/2+1)
 
-    partition = int(first2terms(N) + after_3rd_term(N))
+    partition = int(first2terms(N) + from_3rd_term(N))
     timer_stop = timeit.default_timer()
     running_time = round(timer_stop - timer_start, 6)
 
