@@ -5,7 +5,7 @@ public class partition_mikael {
 
         if (N >= 0) {
             long startTime = System.nanoTime();
-            long partition = first2terms(N) + expansion.after_3rd_term(N);
+            long partition = first2terms(N) + expansion.from_3rd_term(N);
 
             long endTime = System.nanoTime();
             long totalTime = (endTime - startTime) / 1000000000;
@@ -32,7 +32,7 @@ public class partition_mikael {
 }
 
 class expansion {
-    static long after_3rd_term(long N) {
+    static long from_3rd_term(long N) {
         long result = 0;
         for (long n = N - 6; n >= 0; n -= 2) {
             long k = 3 + ((N - 6) - n) / 2;
