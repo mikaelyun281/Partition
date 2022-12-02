@@ -44,9 +44,9 @@ public class partition_by_size_m_3 {
             lower_limit = n - k;
             for (n -= 1; n >= lower_limit; n -= 1) {
                 k = m - n;
-                if (n >= k && k == 1) {
+                if (k == 1) {
                     result += 1;
-                } else if (n >= k && k == 2) {
+                } else if (k == 2) {
                     if (n % 2 == 1) {
                         result += (n + 1) / 2;
                     } else {
