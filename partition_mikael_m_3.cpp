@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 long first2terms(long N);
-long after_3rd_term = 0;
+long from_3rd_term = 0;
 long A(long n, long k);
 long B(long n, long k);
 long C(long n);
@@ -22,7 +22,7 @@ int main(void) {
             A(n,k);
          }
           
-         partition = first2terms(N) + after_3rd_term;
+         partition = first2terms(N) + from_3rd_term;
          std::cout << partition << '\n';
       
          auto end = std::chrono::steady_clock::now();
@@ -87,8 +87,8 @@ long B(long n, long k){
 
 long C(long n){
 
-     after_3rd_term  += D(n);
-     return after_3rd_term;  
+     from_3rd_term  += D(n);
+     return from_3rd_term;  
 }
 
 
@@ -98,27 +98,27 @@ long D(long n){
     
      if(n%6==1){
         a = (n-1)/6;
-        after_3rd_term += 6*a*a*a+(27*a*a)/2+(19*a)/2+2;
+        from_3rd_term += 6*a*a*a+(27*a*a)/2+(19*a)/2+2;
      }
      else if(n%6==2){
         a = (n-2)/6;
-        after_3rd_term += 6*a*a*a+(33*a*a)/2+(29*a)/2+4;
+        from_3rd_term += 6*a*a*a+(33*a*a)/2+(29*a)/2+4;
      }
      else if(n%6==3){
         a = (n-3)/6;
-        after_3rd_term += 6*a*a*a+(39*a*a)/2+(41*a)/2+7; 
+        from_3rd_term += 6*a*a*a+(39*a*a)/2+(41*a)/2+7; 
      }
      else if(n%6==4){
         a = (n-4)/6;
-        after_3rd_term += 6*a*a*a+(45*a*a)/2+(55*a)/2+11; 
+        from_3rd_term += 6*a*a*a+(45*a*a)/2+(55*a)/2+11; 
      }
      else if(n%6==5){
         a = (n-5)/6;
-        after_3rd_term += 6*a*a*a+(51*a*a)/2+(71*a)/2+16;
+        from_3rd_term += 6*a*a*a+(51*a*a)/2+(71*a)/2+16;
      }
      else {
         a = n/6;
-        after_3rd_term += 6*a*a*a+(21*a*a)/2+(11*a)/2+1;
+        from_3rd_term += 6*a*a*a+(21*a*a)/2+(11*a)/2+1;
      }
 
      return result;
