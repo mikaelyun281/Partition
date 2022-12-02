@@ -1,6 +1,6 @@
 public class partition_by_size_m_3 {
     public static void main(String[] args) {
-        long n = 100, k = 50;
+        long n = 150, k = 50;
         /*
         Please input (n,k) for the ps(n,k) function above here.
         Note that when k>=n, then ps(n,k) = P(n) holds,
@@ -26,7 +26,17 @@ public class partition_by_size_m_3 {
         if (n >= k && k > 0) {
             for (n -= 1; n >= lower_limit; n -= 1) {
                 k = m - n;
-                result += A(n, k);
+                if (k == 1) {
+                    result += 1;
+                } else if (k == 2) {
+                    if (n % 2 == 1) {
+                        result += (n + 1) / 2;
+                    } else {
+                        result += (n / 2) + 1;
+                    }
+                } else {
+                    result += A(n, k);
+                }
             }
             return result;
         } else if (k > n && n != 0 && k > 0) {
@@ -34,7 +44,17 @@ public class partition_by_size_m_3 {
             lower_limit = n - k;
             for (n -= 1; n >= lower_limit; n -= 1) {
                 k = m - n;
-                result += A(n, k);
+                if (n >= k && k == 1) {
+                    result += 1;
+                } else if (n >= k && k == 2) {
+                    if (n % 2 == 1) {
+                        result += (n + 1) / 2;
+                    } else {
+                        result += (n / 2) + 1;
+                    }
+                } else {
+                    result += A(n, k);
+                }
             }
             return result;
         } else {
@@ -43,15 +63,7 @@ public class partition_by_size_m_3 {
     }
 
     private static long A(long n, long k) {
-        if (n >= k && k == 1) {
-            return 1;
-        } else if (n >= k && k == 2) {
-            if (n % 2 == 1) {
-                return (n + 1) / 2;
-            } else {
-                return (n / 2) + 1;
-            }
-        } else if (n >= k && k >= 4) {
+        if (n >= k && k >= 4) {
             return C(n) + A(n - k, k) + B(n, k);
         } else if (n >= 4 && n < k) {
             k = n;
