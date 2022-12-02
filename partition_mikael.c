@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 long first2terms(long N);
-long after_3rd_term = 0;
+long from_3rd_term = 0;
 long A(long n, long k);
 long B(long n, long k);
 long C(long n);
@@ -12,7 +12,6 @@ long D(long n);
 int main(void) {
 
   double N = 150;  // Please input a natural number "N" for P(N) at here.
-   
 
       clock_t start, end;
       double running_time;
@@ -28,11 +27,11 @@ int main(void) {
             A(n,k);
          }
            
-         partition = first2terms(N) + after_3rd_term;
+         partition = first2terms(N) + from_3rd_term;
          printf("%ld\n",partition);
      
          end = clock();
-         running_time = ((double) (end - start))/ CLOCKS_PER_SEC;
+         running_time = ((double)(end - start))/CLOCKS_PER_SEC;
          printf("%s%lf%s\n", "running time: ", running_time, " seconds");   
       }
       else{
@@ -48,7 +47,7 @@ long first2terms(long N){
       if(N==0){
          return 1;
       }
-      else{
+      else{ 
          long secondterm = 0;
          if(N%2==1){
            secondterm += ((N-3)/2)*((N-3)/2)+((N-3)/2);
@@ -57,7 +56,7 @@ long first2terms(long N){
            secondterm += (N/2-1)*(N/2-1);
          }
          return N + secondterm;
-      }
+      } 
 }
 
 
@@ -91,8 +90,8 @@ long B(long n, long k){
 
 long C(long n){
      
-     after_3rd_term += D(n);
-     return after_3rd_term; 
+     from_3rd_term += D(n);
+     return from_3rd_term; 
 }
 
 
@@ -103,10 +102,8 @@ long D(long n){
      if(n%2==1){
         result += ((n+1)/2)*((n+1)/2)+((n+1)/2);
      }
-      
      else{
         result += (n/2+1)*(n/2+1);
      }
-
      return result;
 } 
