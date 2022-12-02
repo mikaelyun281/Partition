@@ -40,14 +40,16 @@ long expansionI(long n, long k){
         long m=n, limitlength = n-k;
         for(n-=1; n>=limitlength; n-=1){ 
             k=m-n;
-            expansionII(n,k);
+            if (k == 1) {result += 1;}
+            else{expansionII(n,k);}
         }
      }
      else if (k > n && n != 0 && k != 0) {
         long m=n, k=n, limitlength = n-k;
         for(n-=1; n>=limitlength; n-=1){ 
             k=m-n;
-            expansionII(n,k);
+            if (k == 1) {result += 1;}
+            else{expansionII(n,k);}
         }
      }
      else {
@@ -59,8 +61,7 @@ long expansionI(long n, long k){
 
 long expansionII(long n, long k){
 
-     if (n >= k && k == 1) {return result += 1;}
-     else if(n>=k && k>=3){
+     if(n>=k && k>=3){
         for(k; k>=3; k--)expansionII(n-k,k);}  
      else if(n>=3 && n<k){k=n;
         for(k; k>=3; k--)expansionII(n-k,k);}
