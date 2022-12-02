@@ -19,7 +19,7 @@ if (n - parseInt(n) == 0 && k - parseInt(k) == 0 && n >= 0 && k >= 0) {
         if (n >= k && k > 0) {
             for (n -= 1; n >= lowerlimit; n -= 1) {
                 k = m - n;
-                if (n >= k && k == 1) {result += 1;}
+                if (k == 1) {result += 1;}
                 else {result += A(n, k);}
             }
             return result;
@@ -28,7 +28,7 @@ if (n - parseInt(n) == 0 && k - parseInt(k) == 0 && n >= 0 && k >= 0) {
             k = n, lowerlimit = n - k;
             for (n -= 1; n >= lowerlimit; n -= 1) {
                 k = m - n;
-                if (n >= k && k == 1) {result += 1;}
+                if (k == 1) {result += 1;}
                 else {result += A(n, k);}
             }
             return result;
