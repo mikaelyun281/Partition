@@ -15,22 +15,26 @@ if(n-int(n) == 0 and k-int(k) == 0 and n >=0 and k >= 0):
         if n>=k and k>0:    
             for n in range(n-1, n-k-1, -1):
                 k=m-n
-                result += A(n,k)
+                if k == 1:
+                    result += 1
+                else:
+                    result += A(n,k)
             return result  
         elif k>n and n != 0 and k>0:
             k=n
             for n in range(n-1, n-k-1, -1):
                 k=m-n
-                result += A(n,k)
+                if k == 1:
+                    result += 1
+                else:
+                    result += A(n,k)
             return result  
         else:
             return 1
 
 
     def A(n, k):
-        if n >=k and k == 1:
-            return 1
-        elif n >= k and k >= 3:
+        if n >= k and k >= 3:
             return C(n) + A(n-k, k) + B(n, k)
         elif n >= 3 and n < k:
             k = n
