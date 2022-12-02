@@ -27,7 +27,11 @@ public class partition_by_size {
         if (n >= k && k > 0) {
             for (n -= 1; n >= lower_limit; n -= 1) {
                 k = m - n;
-                result += A(n, k);
+                if (k == 1) {
+                    result += 1;
+                } else {
+                    result += A(n, k);
+                }
             }
             return result;
         } else if (k > n && n != 0 && k > 0) {
@@ -35,7 +39,11 @@ public class partition_by_size {
             lower_limit = n - k;
             for (n -= 1; n >= lower_limit; n -= 1) {
                 k = m - n;
-                result += A(n, k);
+                if (k == 1) {
+                    result += 1;
+                } else {
+                    result += A(n, k);
+                }
             }
             return result;
         } else {
@@ -44,9 +52,7 @@ public class partition_by_size {
     }
 
     private static long A(long n, long k) {
-        if (n >= k && k == 1) {
-            return 1;
-        } else if (n >= k && k >= 3) {
+        if (n >= k && k >= 3) {
             return C(n) + A(n - k, k) + B(n, k);
         } else if (n >= 3 && n < k) {
             k = n;
@@ -71,8 +77,8 @@ public class partition_by_size {
         return c_result;
     }
 
-    private static long D(long n) {
-        long result = 0;
+    private static double D(long n) {
+        double result = 0;
 
         if (n % 2 == 1) {
             result += (n + 1) / 2;
